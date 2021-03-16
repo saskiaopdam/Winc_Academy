@@ -2,6 +2,19 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.site-wrapper   {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 7.5% 60% 25% 7.5%;
+}
+
 .site-header    {
     background-color: lightblue;
     padding: 0.5rem;
@@ -22,18 +35,10 @@
     padding: 0.5rem;
 }
 
-body{
-    margin: 0;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 7.5% 60% 25% 7.5%;
-    color: white;
-    font-size: 16px;
-}
+
 
 @media (min-width: 1024px) {
-    body    {
+    .site-wrapper    {
         display: grid;
         grid-template-columns: 30% 70%;
         grid-template-rows: 7.5% 60% 25% 7.5%;
@@ -51,7 +56,7 @@ body{
 }
 
 @media (min-width: 2048px) {
-    body    {
+    .site-wrapper    {
         display: grid;
         grid-template-columns: 20% 60% 20%;
         grid-template-rows: 7.5% 60% 25% 7.5%;
