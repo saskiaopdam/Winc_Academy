@@ -98,7 +98,10 @@ console.log(
 );
 //Log het laatst temperament van de temperamenten van de derde kat.
 //Hier kom ik niet uit, de log uitkomst is undefined
+const lengthTemperamentCatThree = catBreeds[2].temperament.length;
 console.log(
   "Laatste temperament van de temperamenten van de derde kat:",
-  catBreeds[2].temperament[length - 1]
+  catBreeds[2].temperament[lengthTemperamentCatThree - 1]
 );
+//Log het favoriete voedsel van de derde kat
+console.log("Favoriete voedsel derde kat:", catBreeds[2].food.favourite_food);
