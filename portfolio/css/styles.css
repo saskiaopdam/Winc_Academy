@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+body h1 {
+  font-family: "Zilla Slab", serif;
+}
+
+.page-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff;
+  /*crimson*/
+}
+.page-nav__brand {
+  font-family: "Zilla Slab", serif;
+  font-weight: bold;
+}
+.page-nav__brand__link {
+  color: #000;
+  text-decoration: none;
+}
+.page-nav__brand__link:hover, .page-nav__brand__link:active {
+  text-decoration: underline;
+}
+.page-nav__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.page-nav__menu__link {
+  color: #000;
+  text-decoration: none;
+}
+.page-nav__menu__link:hover, .page-nav__menu__link:active {
+  text-decoration: underline;
+}
+
+.page-header {
+  height: 100vh;
+  padding: 114px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.page-header__image {
+  width: 100%;
+}
+.page-header__title {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 114px 30px 30px 30px;
+}
+.section__inner {
+  min-height: calc(100vh - 114px - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.section-lightgrey {
+  background-color: rgba(241, 241, 241, 0.5);
+}
+
+.section-lightcrimson {
+  background-color: rgba(220, 20, 60, 0.05);
+  /*crimson*/
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.project__number {
+  color: rgba(220, 20, 60, 0.5);
+  /*crimson*/
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.project__title {
+  font-family: "Zilla Slab", serif;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+}
+.project__title:hover, .project__title:active {
+  text-decoration: underline;
+}
+
+.about__summary {
+  margin-bottom: 30px;
+}
+.about__summary__list {
+  font-family: "Zilla Slab", serif;
+}
+.about__summary__list__item {
+  line-height: 1.5;
+}
+.about__info__paragraph {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contact__link {
+  font-family: "Zilla Slab", serif;
+  font-size: larger;
+  color: #000;
+  text-decoration: none;
+}
+.contact__link:hover, .contact__link:active {
+  text-decoration: underline;
+}
+.contact__link + .contact__link {
+  margin-top: 15px;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.page-footer__copyright {
+  font-size: smaller;
+}
+.page-footer__back-to-home {
+  color: #000;
+  text-decoration: none;
+}
+.page-footer__back-to-home:hover, .page-footer__back-to-home:active {
+  text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  .page-nav {
+    padding: 32px;
+  }
+
+  .page-header {
+    padding: 121px 32px 32px 32px;
+  }
+  .page-header__image {
+    max-width: 768px;
+  }
+  .page-header__title {
+    max-width: 768px;
+  }
+
+  .section {
+    padding: 121px 32px 32px 32px;
+  }
+  .section__inner {
+    min-height: calc(100vh - 121px - 32px);
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .about__summary {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .about__summary__list {
+    width: 70%;
+  }
+  .about__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .about__info__paragraph {
+    width: 70%;
+    margin-bottom: 0;
+  }
+
+  .contact__link + .contact__link {
+    margin-top: 16px;
+  }
+
+  .page-footer {
+    padding: 32px;
+  }
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,21 @@
+@mixin flexColumn($justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin flexRow($justifyContent, $alignItems) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin text-link {
+  color: #000;
+  text-decoration: none;
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}

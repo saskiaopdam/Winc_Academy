@@ -1,0 +1,11 @@
+.contact {
+  @include flexColumn(flex-start, center);
+  &__link {
+    font-family: "Zilla Slab", serif;
+    font-size: larger;
+    @include text-link;
+  }
+  &__link + &__link {
+    margin-top: 15px;
+  }
+}
