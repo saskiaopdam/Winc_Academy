@@ -12,8 +12,14 @@ function assignGrade(score) {
   }
 }
 
-for (score = 60; score <= 100; score++) {
-  var score = i;
-  assignGrade(i);
-  console.log("Voor 91 punten krijg je een A");
+// for (score = 60; score <= 100; score++) {
+//   var score = i;
+//   assignGrade(i);
+//   console.log("Voor 91 punten krijg je een A");
+// }
+
+//Oplossing:
+
+for (let i = 60; i <= 100; i++) {
+  console.log("Voor " + i + " punten, krijg je een " + assignGrade(i));
 }
