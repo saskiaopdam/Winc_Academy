@@ -1,0 +1,17 @@
+.about {
+  &__summary {
+    margin-bottom: 30px;
+    &__list {
+      font-family: "Zilla Slab", serif;
+      &__item {
+        line-height: 1.5;
+      }
+    }
+  }
+  &__info {
+    &__paragraph {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+}
