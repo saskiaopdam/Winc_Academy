@@ -28,34 +28,14 @@
   padding: 10px;
 }
 
-.colorNameGrey-hidden {
+.colorName {
+  padding: 10px;
+}
+
+.colorName-hidden {
   display: none;
 }
-.colorNameGrey-visible {
-  display: block;
-}
-.colorNameRed-hidden {
-  display: none;
-}
-.colorNameRed-visible {
-  display: block;
-}
-.colorNameOrange-hidden {
-  display: none;
-}
-.colorNameOrange-visible {
-  display: block;
-}
-.colorNamePurple-hidden {
-  display: none;
-}
-.colorNamePurple-visible {
-  display: block;
-}
-.colorNameGreen-hidden {
-  display: none;
-}
-.colorNameGreen-visible {
+.colorName-visible {
   display: block;
 }
 
@@ -66,11 +46,13 @@
 .menu-closed {
   position: relative;
   left: -250px;
+  transition: left 500ms;
 }
 
 .menu-opened {
   position: relative;
   left: 0px;
+  transition: left 500ms;
 }
 
 .menuItem {

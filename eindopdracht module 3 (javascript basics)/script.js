@@ -6,11 +6,12 @@ const menuItemOrange = document.querySelector(".menuItem-orange");
 const menuItemPurple = document.querySelector(".menuItem-purple");
 const menuItemGreen = document.querySelector(".menuItem-green");
 
-const colorNameGrey = document.querySelector(".colorNameGrey");
-const colorNameRed = document.querySelector(".colorNameRed");
-const colorNameOrange = document.querySelector(".colorNameOrange");
-const colorNamePurple = document.querySelector(".colorNamePurple");
-const colorNameGreen = document.querySelector(".colorNameGreen");
+const colorName = document.querySelector(".colorName");
+const colorNameGrey = document.querySelector(".colorName-grey");
+const colorNameRed = document.querySelector(".colorName-red");
+const colorNameOrange = document.querySelector(".colorName-orange");
+const colorNamePurple = document.querySelector(".colorName-purple");
+const colorNameGreen = document.querySelector(".colorName-green");
 
 const body = document.querySelector("body");
 const menu = document.querySelector(".menu");
@@ -51,76 +52,59 @@ const makeBodyBackgroundGreen = function () {
   body.classList.add("body-green");
 };
 
-// Ergens een denkfout in de "displayColorName" functions, want bij aanklikken van een volgende kleur in het menu blijft de kleurnaam van de vorige kleur op de body background staan //
-// Kom er niet uit, maar heeft denk ik te maken met de naamgeving -hidden en -visible
+const hideDisplayedColorName = function () {
+  const colorNames = document.getElementsByClassName("colorName");
+  for (i = 0; i < colorNames.length; i++) {
+    colorNames[i].classList.remove("colorName-visible");
+  }
+};
+
 const displayColorNameGrey = function () {
-  colorNameGrey.classList.add("colorNameGrey-visible");
-  colorNameGrey.classList.remove(
-    "colorNameRed-visible",
-    "colorNameOrange-visible",
-    "colorNamePurple-visible",
-    "colorNameGreen-visible"
-  );
+  colorNameGrey.classList.add("colorName-visible");
 };
 const displayColorNameRed = function () {
-  colorNameRed.classList.add("colorNameRed-visible");
-  colorNameRed.classList.remove(
-    "colorNameGrey-visible",
-    "colorNameOrange-visible",
-    "colorNamePurple-visible",
-    "colorNameGreen-visible"
-  );
+  colorNameRed.classList.add("colorName-visible");
 };
 const displayColorNameOrange = function () {
-  colorNameOrange.classList.add("colorNameOrange-visible");
-  colorNameOrange.classList.remove(
-    "colorNameGrey-visible",
-    "colorNameRed-visible",
-    "colorNamePurple-visible",
-    "colorNameGreen-visible"
-  );
+  colorNameOrange.classList.add("colorName-visible");
 };
 const displayColorNamePurple = function () {
-  colorNamePurple.classList.add("colorNamePurple-visible");
-  colorNamePurple.classList.remove(
-    "colorNameGrey-visible",
-    "colorNameRed-visible",
-    "colorNameOrange-visible",
-    "colorNameGreen-visible"
-  );
+  colorNamePurple.classList.add("colorName-visible");
 };
 const displayColorNameGreen = function () {
-  colorNameGreen.classList.add("colorNameGreen-visible");
-  colorNameGreen.classList.remove(
-    "colorNameGrey-visible",
-    "colorNameRed-visible",
-    "colorNameOrange-visible",
-    "colorNamePurple-visible"
-  );
+  colorNameGreen.classList.add("colorName-visible");
 };
 
 // Event-listeners hamburger
 hamburger.addEventListener("click", toggleMenu);
 hamburger.addEventListener("mouseover", openMenu);
-// hamburger.addEventListener("mouseout", closeMenu); // Als menu sluit bij mouseout dan kan de gebruiker niet in het menu klikken //
+// hamburger.addEventListener("mouseout", closeMenu);
+// Als menu sluit bij mouseout dan kan de gebruiker niet in het menu klikken //
 
 // Event-listeners menu
 menuItemGrey.addEventListener("click", makeBodyBackgroundGrey);
+menuItemGrey.addEventListener("click", hideDisplayedColorName);
 menuItemGrey.addEventListener("click", displayColorNameGrey);
 menuItemGrey.addEventListener("click", closeMenu);
 
 menuItemRed.addEventListener("click", makeBodyBackgroundRed);
+menuItemRed.addEventListener("click", hideDisplayedColorName);
 menuItemRed.addEventListener("click", displayColorNameRed);
 menuItemRed.addEventListener("click", closeMenu);
 
 menuItemOrange.addEventListener("click", makeBodyBackgroundOrange);
+menuItemOrange.addEventListener("click", hideDisplayedColorName);
 menuItemOrange.addEventListener("click", displayColorNameOrange);
 menuItemOrange.addEventListener("click", closeMenu);
 
 menuItemPurple.addEventListener("click", makeBodyBackgroundPurple);
+menuItemPurple.addEventListener("click", hideDisplayedColorName);
 menuItemPurple.addEventListener("click", displayColorNamePurple);
 menuItemPurple.addEventListener("click", closeMenu);
 
 menuItemGreen.addEventListener("click", makeBodyBackgroundGreen);
+menuItemGreen.addEventListener("click", hideDisplayedColorName);
 menuItemGreen.addEventListener("click", displayColorNameGreen);
 menuItemGreen.addEventListener("click", closeMenu);
+
+// Laatste bonus - achtergrondkleur pagina veranderen door specifieke toetsen in te drukken - misschien later nog proberen. Kom er nu niet uit.
