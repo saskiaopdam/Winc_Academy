@@ -13,12 +13,12 @@ body {
   }
 }
 @import "mixins";
-@import "page-nav";
-@import "page-header";
+@import "navbar";
+@import "hero";
 @import "section";
 @import "project";
 @import "about";
 @import "contact";
-@import "page-footer";
+@import "footer";
 /* MEDIA QUERIES */
 @import "media-queries";

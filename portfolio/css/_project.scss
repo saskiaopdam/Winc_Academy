@@ -7,7 +7,7 @@
   }
   &__title {
     font-family: "Zilla Slab", serif;
-    @include text-link;
+    @include textLink;
     text-align: center;
   }
 }

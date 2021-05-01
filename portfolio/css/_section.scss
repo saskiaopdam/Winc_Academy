@@ -6,9 +6,9 @@
     @include flexColumn(space-evenly, center);
   }
 }
-.section-lightgrey {
+.section--lightgrey {
   background-color: rgba(241, 241, 241, 0.5);
 }
-.section-lightcrimson {
+.section--lightcrimson {
   background-color: rgba(220, 20, 60, 0.05); /*crimson*/
 }

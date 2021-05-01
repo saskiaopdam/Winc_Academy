@@ -15,7 +15,7 @@ body h1 {
   font-family: "Zilla Slab", serif;
 }
 
-.page-nav {
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -25,36 +25,35 @@ body h1 {
   justify-content: space-between;
   align-items: flex-start;
   background-color: #fff;
-  /*crimson*/
 }
-.page-nav__brand {
+.navbar__brand {
   font-family: "Zilla Slab", serif;
   font-weight: bold;
 }
-.page-nav__brand__link {
+.navbar__brand__item {
   color: #000;
   text-decoration: none;
 }
-.page-nav__brand__link:hover, .page-nav__brand__link:active {
+.navbar__brand__item:hover, .navbar__brand__item:active {
   text-decoration: underline;
 }
-.page-nav__hamburger {
+.navbar__hamburger {
   font-size: 1.5rem;
 }
-.page-nav__hamburger-hidden {
+.navbar__hamburger--hidden {
   display: none;
 }
-.page-nav__menu__link {
+.navbar__menu__item {
   color: #000;
   text-decoration: none;
 }
-.page-nav__menu__link:hover, .page-nav__menu__link:active {
+.navbar__menu__item:hover, .navbar__menu__item:active {
   text-decoration: underline;
 }
-.page-nav__menu-closed {
+.navbar__menu--hidden {
   display: none;
 }
-.page-nav__menu-opened {
+.navbar__menu--visible {
   display: block;
   display: flex;
   flex-direction: column;
@@ -62,7 +61,7 @@ body h1 {
   align-items: flex-end;
 }
 
-.page-header {
+.hero {
   height: 100vh;
   padding: 114px 30px 30px 30px;
   display: flex;
@@ -70,10 +69,10 @@ body h1 {
   justify-content: space-evenly;
   align-items: center;
 }
-.page-header__image {
+.hero__image {
   width: 100%;
 }
-.page-header__title {
+.hero__title {
   font-size: 1.25rem;
   text-align: center;
 }
@@ -90,11 +89,11 @@ body h1 {
   align-items: center;
 }
 
-.section-lightgrey {
+.section--lightgrey {
   background-color: rgba(241, 241, 241, 0.5);
 }
 
-.section-lightcrimson {
+.section--lightcrimson {
   background-color: rgba(220, 20, 60, 0.05);
   /*crimson*/
 }
@@ -154,7 +153,7 @@ body h1 {
   margin-top: 15px;
 }
 
-.page-footer {
+.footer {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -164,14 +163,14 @@ body h1 {
   justify-content: space-between;
   align-items: flex-end;
 }
-.page-footer__copyright {
+.footer__copyright {
   font-size: smaller;
 }
-.page-footer__back-to-home {
+.footer__nav {
   color: #000;
   text-decoration: none;
 }
-.page-footer__back-to-home:hover, .page-footer__back-to-home:active {
+.footer__nav:hover, .footer__nav:active {
   text-decoration: underline;
 }
 
@@ -181,17 +180,17 @@ body h1 {
     font-size: 16px;
   }
 
-  .page-nav {
+  .navbar {
     padding: 32px;
   }
 
-  .page-header {
+  .hero {
     padding: 121px 32px 32px 32px;
   }
-  .page-header__image {
+  .hero__image {
     max-width: 768px;
   }
-  .page-header__title {
+  .hero__title {
     max-width: 768px;
   }
 

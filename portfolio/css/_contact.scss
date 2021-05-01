@@ -3,7 +3,7 @@
   &__link {
     font-family: "Zilla Slab", serif;
     font-size: larger;
-    @include text-link;
+    @include textLink;
   }
   &__link + &__link {
     margin-top: 15px;

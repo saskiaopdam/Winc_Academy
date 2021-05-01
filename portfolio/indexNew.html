@@ -2,8 +2,12 @@
 <html lang="en">
   <head>
     <title>Saskia Opdam, full-stack development student</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -15,31 +19,40 @@
       src="https://kit.fontawesome.com/8345fa767d.js"
       crossorigin="anonymous"
     ></script>
+    <title>Document</title>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="navbar__brand">
-        <a class="navbar__brand__item" href="#home">Saskia Opdam</a>
+    <nav class="page-nav">
+      <div class="page-nav__brand">
+        <a class="page-nav__brand__link" href="#home">Saskia Opdam</a>
       </div>
-      <div class="navbar__hamburger"><i class="fas fa-bars"></i></div>
-      <div class="navbar__menu navbar__menu--hidden">
-        <a class="navbar__menu__item" href="#work">work</a>
-        <a class="navbar__menu__item" href="#about">about</a>
-        <a class="navbar__menu__item" href="#contact">contact</a>
+      <div class="page-nav__hamburger"><i class="fas fa-bars"></i></div>
+      <div class="page-nav__menu page-nav__menu-closed">
+        <a class="page-nav__menu__link page-nav__menu__link-work" href="#work"
+          >work</a
+        >
+        <a class="page-nav__menu__link page-nav__menu__link-about" href="#about"
+          >about</a
+        >
+        <a
+          class="page-nav__menu__link page-nav__menu__link-contact"
+          href="#contact"
+          >contact</a
+        >
       </div>
     </nav>
-    <header class="hero" id="home">
+    <header class="page-header" id="home">
       <img
-        class="hero__image"
+        class="page-header__image"
         src="profielfoto.jpg"
         alt="profile photo of Saskia Opdam"
       />
-      <h1 class="hero__title">
+      <h1 class="page-header__title">
         Saskia Opdam is a full-stack development student based in The Hague
       </h1>
     </header>
     <main>
-      <section class="section section--lightgrey" id="work">
+      <section class="section section-lightgrey" id="work">
         <div class="section__inner">
           <div class="project">
             <div class="project__number">01</div>
@@ -69,7 +82,7 @@
           </div>
         </div>
       </section>
-      <section class="section section--lightcrimson" id="about">
+      <section class="section section-lightcrimson" id="about">
         <div class="section__inner">
           <div class="about">
             <div class="about__summary">
@@ -116,7 +129,7 @@
           </div>
         </div>
       </section>
-      <section class="section section--lightgrey" id="contact">
+      <section class="section section-lightgrey" id="contact">
         <div class="section__inner">
           <div class="contact">
             <a class="contact__link" href="mailto:opdamsaskia@icloud.com">
@@ -140,9 +153,9 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <small class="footer__copyright">copyright 2021 Saskia Opdam</small>
-      <a class="footer__nav" href="#home">up</a>
+    <footer class="page-footer">
+      <small class="page-footer__copyright">copyright 2021 Saskia Opdam</small>
+      <a class="page-footer__back-to-home" href="#home">up</a>
     </footer>
   </body>
 </html>
