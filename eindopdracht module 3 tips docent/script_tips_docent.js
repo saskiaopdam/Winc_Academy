@@ -1,3 +1,10 @@
+// De code is nu flink korter en overzichtelijker
+// Alleen verandert de achtergrond niet van kleur als je op een menuItem klikt
+// Waar kan dit aan liggen?
+// Als je in Chrome op een menuItem klikt dan zie je in de dev tools:
+/* <body class="body-${colorName}">
+Is er misschien iets mis met de functiedefinitie changeBodyBackgroundColor? */
+
 // Variables (element selectie)
 const hamburger = document.querySelector(".hamburger");
 const menuItemGrey = document.querySelector(".menuItem-grey input");
