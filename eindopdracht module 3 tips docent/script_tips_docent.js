@@ -29,7 +29,7 @@ const closeMenu = function () {
 };
 const changeBodyBackgroundColor = function (colorName) {
   document.body.removeAttribute("class");
-  document.body.classList.add("body-${colorName}");
+  document.body.classList.add(`body-${colorName}`);
 };
 
 const displayColorLabel = function (colorName) {
@@ -38,10 +38,11 @@ const displayColorLabel = function (colorName) {
 
 const onMenuItemClick = function (e) {
   const colorName = e.target.id;
+  const colorNameCapitalized = colorName[0].toUpperCase() + colorName.slice(1);
   console.log(colorName);
 
   changeBodyBackgroundColor(colorName);
-  displayColorLabel(colorName);
+  displayColorLabel(colorNameCapitalized);
   closeMenu();
 };
 
