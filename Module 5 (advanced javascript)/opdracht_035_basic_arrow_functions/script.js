@@ -40,6 +40,8 @@ const myFunction = (a, b) => a + b;
 
 const addFive = (a) => a + 5;
 
+// Prettier laat mij de () rond de parameter niet weghalen ...
+
 // Deel E - uitzondering: return object
 // Schrijf een arrow function met de naam createObject met een implicit return statement (dus op 1 regel) die een simpel object returned: {greeting: "hoi"}
 
