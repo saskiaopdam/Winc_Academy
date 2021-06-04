@@ -44,26 +44,25 @@ for (let i = 0; i < bigFiveButtons.length; i++) {
 const removeAllButton = document.getElementById("remove-all-button");
 // console.log(removeAllButton);
 
-const removeAllItems = function () {
-  //   console.log("You clicked the button");
-  const SpottedAnimals = document.getElementById("spotted-animals-list");
-  const allSpottedAnimals = SpottedAnimals.getElementsByClassName(
-    "spotted-animals-list-item"
-  );
-  //   console.log(allSpottedAnimals);
-  // allSpottedAnimals verwijderen simpel: in een keer
-  //   SpottedAnimals.innerHTML = "";
+const parent = document.getElementById("spotted-animals-list");
+// console.log(parent);
+const children = parent.getElementsByClassName("spotted-animals-list-item");
+// console.log(children);
 
-  // allSpottedAnimals verwijderen chique: een voor een
-  for (let i = 0; i < allSpottedAnimals.length; i++) {
-    allSpottedAnimals[i].remove();
+const removeAllItems = function () {
+  // console.log("You clicked the button");
+
+  // lijstinhoud in 1 keer verwijderen:
+  // parent.innerHTML = "";
+  // lijstitems een voor een verwijderen:
+
+  // for (i = 0; i < children.length; i++) {
+  //   parent.remove(children[i]);
+  // }
+  for (i = 0; i < children.length; i++) {
+    parent.removeChild(children[i]);
   }
 };
-
-// Met de loop gaan de elementen niet een voor een weg:
-// 2 elementen: 1 verwijderd
-// 3 elementen: 2 verwijderd
-// 7 elementen: 4 verwijderd
 
 removeAllButton.addEventListener("click", removeAllItems);
 // console.log(removeAllItems);
