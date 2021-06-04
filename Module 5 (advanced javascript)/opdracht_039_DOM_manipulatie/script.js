@@ -21,23 +21,23 @@ for (let i = 0; i < bigFiveButtons.length; i++) {
 
 // Deel 2 - 1 element verwijderen uit de DOM
 
-// const removeFirstItemButton = document.getElementById(
-//   "remove-first-item-button"
-// );
-// // console.log(removeFirstItemButton);
+const removeFirstItemButton = document.getElementById(
+  "remove-first-item-button"
+);
+// console.log(removeFirstItemButton);
 
-// const removeFirstItem = function () {
-//   //   console.log("You clicked the button");
-//   const SpottedAnimals = document.getElementById("spotted-animals-list");
-//   const firstItem = SpottedAnimals.getElementsByClassName(
-//     "spotted-animals-list-item"
-//   )[0];
-//   //   console.log(firstItem);
-//   SpottedAnimals.removeChild(firstItem);
-// };
+const removeFirstItem = function () {
+  //   console.log("You clicked the button");
+  const SpottedAnimals = document.getElementById("spotted-animals-list");
+  const firstItem = SpottedAnimals.getElementsByClassName(
+    "spotted-animals-list-item"
+  )[0];
+  //   console.log(firstItem);
+  SpottedAnimals.removeChild(firstItem);
+};
 
-// removeFirstItemButton.addEventListener("click", removeFirstItem);
-// console.log(removeFirstItem);
+removeFirstItemButton.addEventListener("click", removeFirstItem);
+console.log(removeFirstItem);
 
 // Deel 3 - Meerdere elementen verwijderen uit de DOM
 
@@ -53,15 +53,19 @@ const removeAllItems = function () {
   // console.log("You clicked the button");
 
   // lijstinhoud in 1 keer verwijderen:
-  // parent.innerHTML = "";
-  // lijstitems een voor een verwijderen:
+  parent.innerHTML = "";
 
-  // for (i = 0; i < children.length; i++) {
-  //   parent.remove(children[i]);
-  // }
-  for (i = 0; i < children.length; i++) {
-    parent.removeChild(children[i]);
+  // lijstitems een voor een verwijderen 
+  // met parent.removeChild:
+
+  while (parent.firstElementChild) {
+    parent.removeChild(parent.firstElementChild);
   }
+
+   // lijstitems een voor een verwijderen 
+   // met parent.remove():
+parent.querySelectorAll('*').forEach(n => n.remove());
+
 };
 
 removeAllButton.addEventListener("click", removeAllItems);
