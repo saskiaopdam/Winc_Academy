@@ -20,28 +20,32 @@ const getTweet = new Request("https://tronalddump.io/random/quote", {
 });
 const getPoke = new Request("https://pokeapi.co/api/v2/pokemon/1", {
   method: "GET",
-  // headers: {
-  //   Accept: "text/plain",
-  // },
+  headers: {
+    Accept: "text/plain",
+  },
 });
 
 const surprises = [getJoke, getTweet, getPoke];
 let randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
 
 const showSurprise = () => {
-  alert("Congratulations, you clicked");
+  // alert("Congratulations, you clicked");
+  console.log(randomSurprise);
   fetch(randomSurprise)
     .then((response) => {
       console.log(response);
-      if ((randomSurprise = getJoke)) {
-        return response.text();
-      } else if ((randomSurprise = getTweet)) {
-        return response.text();
-      } else if ((randomSurprise = getPoke)) {
-        return response;
+      if (randomSurprise == getJoke) {
+        let data = response.text();
+        return data;
+      } else if (randomSurprise == getTweet) {
+        let data = response.json();
+        return data;
+      } else if (randomSurprise == getPoke) {
+        return response.json();
       }
     })
-    .then((data) => display(data));
+    .then((data) => console.log(data.value));
+  // .then((data) => display(data));
 };
 
 button[0].addEventListener("click", showSurprise);
