@@ -1,9 +1,9 @@
 const button = document.getElementsByTagName("button");
 const result = document.getElementById("result");
 
-const display = (data) => {
+const display = (content) => {
   result.textContent = "";
-  result.textContent = data;
+  result.textContent = content;
 };
 
 const getJoke = new Request("https://icanhazdadjoke.com/", {
@@ -44,7 +44,15 @@ const showSurprise = () => {
         return response.json();
       }
     })
-    .then((data) => console.log(data.value));
+    .then((data) => {
+      if (randomSurprise == getJoke) {
+        display(data);
+      } else if (randomSurprise == getTweet) {
+        display(data.value);
+      } else if (randomSurprise == getPoke) {
+        display(data);
+      }
+    });
   // .then((data) => display(data));
 };
 
