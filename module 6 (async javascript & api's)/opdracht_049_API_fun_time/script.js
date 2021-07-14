@@ -1,9 +1,20 @@
 const button = document.getElementsByTagName("button");
-const result = document.getElementById("result");
+const surpriseHeading = document.getElementById("surpriseHeading");
+const surpriseContent = document.getElementById("surpriseContent");
 
-const display = (content) => {
-  result.textContent = "";
-  result.textContent = content;
+const displaySurpriseHeading = () => {
+  if (randomSurprise == getJoke) {
+    surpriseHeading.textContent = "A dad joke! :";
+  } else if (randomSurprise == getTweet) {
+    surpriseHeading.textContent = "A Trump tweet! :";
+  } else if (randomSurprise == getPoke) {
+    surpriseHeading.textContent = "A Pokemon! :";
+  }
+};
+
+const displaySurpriseContent = (content) => {
+  // result.textContent = "";
+  surpriseContent.textContent = content;
 };
 
 const getJoke = new Request("https://icanhazdadjoke.com/", {
@@ -26,10 +37,9 @@ const getPoke = new Request("https://pokeapi.co/api/v2/pokemon/1", {
 });
 
 const surprises = [getJoke, getTweet, getPoke];
-let randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
+const randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
 
 const showSurprise = () => {
-  // alert("Congratulations, you clicked");
   console.log(randomSurprise);
   fetch(randomSurprise)
     .then((response) => {
@@ -41,19 +51,23 @@ const showSurprise = () => {
         let data = response.json();
         return data;
       } else if (randomSurprise == getPoke) {
-        return response.json();
+        let data = response.json();
+        return data;
       }
     })
     .then((data) => {
+      displaySurpriseHeading();
       if (randomSurprise == getJoke) {
-        display(data);
+        displaySurpriseContent(data);
+        console.log(data);
       } else if (randomSurprise == getTweet) {
-        display(data.value);
+        displaySurpriseContent(data.value);
+        console.log(data.value);
       } else if (randomSurprise == getPoke) {
-        display(data);
+        displaySurpriseContent(data);
+        console.log(data);
       }
     });
-  // .then((data) => display(data));
 };
 
 button[0].addEventListener("click", showSurprise);
