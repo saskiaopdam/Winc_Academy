@@ -23,6 +23,9 @@ const getJoke = new Request("https://icanhazdadjoke.com/", {
     Accept: "text/plain",
   },
 });
+// Ik kom er met de docs op icanhazdadjoke niet uit hoe je een random joke als image op kan halen
+// Er staat alleen uitgelegd hoe je een joke als image op kan halen met behulp van een joke id.
+// Maar hoe moet je de joke id van een random joke achterhalen?
 const getTweet = new Request("https://tronalddump.io/random/quote", {
   method: "GET",
   headers: {
@@ -31,9 +34,9 @@ const getTweet = new Request("https://tronalddump.io/random/quote", {
 });
 const getPoke = new Request("https://pokeapi.co/api/v2/pokemon/1", {
   method: "GET",
-  headers: {
-    Accept: "text/plain",
-  },
+  // headers: {
+  //   Accept: "*/*",
+  // },
 });
 
 const showSurprise = () => {
@@ -73,8 +76,8 @@ const showSurprise = () => {
         displaySurpriseContent(data.value);
         console.log(data.value);
       } else if (randomSurprise == getPoke) {
-        displaySurpriseContent(data);
-        console.log(data);
+        displaySurpriseContent(data.name);
+        console.log(data.name);
       }
     });
 };
