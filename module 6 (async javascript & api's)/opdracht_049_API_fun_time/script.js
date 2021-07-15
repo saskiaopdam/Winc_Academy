@@ -2,15 +2,15 @@ const button = document.getElementsByTagName("button");
 const surpriseHeading = document.getElementById("surpriseHeading");
 const surpriseContent = document.getElementById("surpriseContent");
 
-const displaySurpriseHeading = () => {
-  if (randomSurprise == getJoke) {
-    surpriseHeading.textContent = "A dad joke! :";
-  } else if (randomSurprise == getTweet) {
-    surpriseHeading.textContent = "A Trump tweet! :";
-  } else if (randomSurprise == getPoke) {
-    surpriseHeading.textContent = "A Pokemon! :";
-  }
-};
+// const displaySurpriseHeading = () => {
+//   if (randomSurprise == getJoke) {
+//     surpriseHeading.textContent = "A dad joke! :";
+//   } else if (randomSurprise == getTweet) {
+//     surpriseHeading.textContent = "A Trump tweet! :";
+//   } else if (randomSurprise == getPoke) {
+//     surpriseHeading.textContent = "A Pokemon! :";
+//   }
+// };
 
 const displaySurpriseContent = (content) => {
   // result.textContent = "";
@@ -36,10 +36,10 @@ const getPoke = new Request("https://pokeapi.co/api/v2/pokemon/1", {
   },
 });
 
-const surprises = [getJoke, getTweet, getPoke];
-const randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
-
 const showSurprise = () => {
+  const surprises = [getJoke, getTweet, getPoke];
+  const randomSurprise =
+    surprises[Math.floor(Math.random() * surprises.length)];
   console.log(randomSurprise);
   fetch(randomSurprise)
     .then((response) => {
@@ -56,6 +56,15 @@ const showSurprise = () => {
       }
     })
     .then((data) => {
+      const displaySurpriseHeading = () => {
+        if (randomSurprise == getJoke) {
+          surpriseHeading.textContent = "A dad joke! :";
+        } else if (randomSurprise == getTweet) {
+          surpriseHeading.textContent = "A Trump tweet! :";
+        } else if (randomSurprise == getPoke) {
+          surpriseHeading.textContent = "A Pokemon! :";
+        }
+      };
       displaySurpriseHeading();
       if (randomSurprise == getJoke) {
         displaySurpriseContent(data);
@@ -71,3 +80,19 @@ const showSurprise = () => {
 };
 
 button[0].addEventListener("click", showSurprise);
+
+// const isSquare = (n) => {
+//   console.log(Number.isInteger(Math.sqrt(n)));
+//   return Number.isInteger(Math.sqrt(n));
+// };
+// isSquare(6);
+
+// const replaceWUBbySpace = (song) =>{
+//   song.replaceAll("WUB", " ");
+// };
+
+// function songDecoder(song) {
+//   replaceWUBbySpace(song);
+//   };
+// }
+// songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB");
